@@ -116,8 +116,9 @@ def loginExisting():
         if(usernameInput in userDict):
             passwordInput = input("Please enter your password: ")
             if(userDict[usernameInput] == passwordInput):
-                print("\nLogin successful!\nWelcome back, ", usernameInput)
+                print("\nLogin successful!\n\nWelcome back, ", usernameInput)
                 checker = 3
+                exit()
 
             else:
                 print("Password is incorrect. Try again.")
@@ -151,14 +152,14 @@ def loginExisting():
                         if S:
                             Password2 = input(("CONFIRM PASSWORD: "))
                             while (NewPassword != Password2):
-                                print("CONFIRM PASSWORD DOES NOT MATCH ....")
-                                print("PLEASE TRY AGAIN....")
+                                print("\nCONFIRM PASSWORD DOES NOT MATCH ....")
+                                print("\nPLEASE TRY AGAIN....")
                                 Password2 = input(("CONFIRM PASSWORD: "))
                         else:
-                            print("Must have minimum one special character,one digit,one uppercase, one lowercase character")
+                            print("\nMust have minimum one special character,one digit,one uppercase, one lowercase character")
                             loginExisting()
 
-                        print(".......Password changed.......")
+                        print("\n.......Password changed.......")
                         f = open("REGISTRATION.txt", "w")
                         f.write( usernameInput + " " + NewPassword+"\n" )
                         f.close()
